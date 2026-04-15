@@ -1,0 +1,29 @@
+FUNCTION factorial_recursive(n)
+    // Input:  n – a non‑negative integer
+    // Output: the factorial of n (n!)
+    // Formula: n! = n * (n-1)!, with 0! = 1
+
+    IF n == 0 THEN
+        RETURN 1                     // Base case: 0! = 1
+    ELSE
+        RETURN n * factorial_recursive(n - 1)   // Recursive call using the formula
+    END IF
+END FUNCTION
+
+MAIN PROGRAM
+    PRINT program header and formula description
+    REPEAT
+        PROMPT user for a number
+        READ input
+        IF input is not an integer THEN
+            DISPLAY error message
+        ELSE IF input < 0 THEN
+            DISPLAY error message
+        ELSE
+            EXIT loop
+        END IF
+    END REPEAT
+
+    result ← factorial_recursive(number)
+    PRINT number, "! = ", result
+END MAIN PROGRAM
