@@ -1,0 +1,33 @@
+FUNCTION fibonacci_recursive(n)
+    // Input:  n – a non‑negative integer (position in Fibonacci sequence)
+    // Output: the nth Fibonacci number, defined as:
+    //         F(0) = 0
+    //         F(1) = 1
+    //         F(n) = F(n-1) + F(n-2) for n >= 2
+
+    IF n == 0 THEN
+        RETURN 0                     // First base case
+    ELSE IF n == 1 THEN
+        RETURN 1                     // Second base case
+    ELSE
+        RETURN fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)   // Recursive formula
+    END IF
+END FUNCTION
+
+MAIN PROGRAM
+    PRINT program header and instructions
+    REPEAT
+        PROMPT user for n
+        READ input
+        IF input is not an integer THEN
+            DISPLAY error message
+        ELSE IF n < 0 THEN
+            DISPLAY error message
+        ELSE
+            EXIT loop
+        END IF
+    END REPEAT
+
+    result ← fibonacci_recursive(n)
+    PRINT "F(", n, ") = ", result
+END MAIN PROGRAM
